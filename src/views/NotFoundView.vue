@@ -1,21 +1,17 @@
 <template>
-  <div class="home">
+  <div>
     <main class="content d-flex ai-ctr jc-ctr">
       <h1 class="headline home__headline headline--first">
-        Главная
+        Сожалеем, но такой страницы нет
       </h1>
     </main>
   </div>
 </template>
 
-<style lang="scss">
-@import '@/assets/scss/home';
-</style>
-
 <script>
 
 export default {
-  name: 'HomeView',
+  name: 'NotFoundView',
   components: {
   }
 }

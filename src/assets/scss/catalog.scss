@@ -1,0 +1,124 @@
+@import '@/assets/scss/vars';
+
+.catalog {
+  padding-top: 60px;
+  &__headline {
+    padding-left: 300px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 580px) {
+    padding-top: 30px;
+    &__headline {
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+.catalog__content {
+  margin-left: 50px;
+  flex-grow: 1;
+  @media (max-width: 580px) {
+    margin-left: 0px;
+  }
+}
+.catalog-columns {
+  width: 100%;
+  @media (max-width: 580px) {
+    flex-wrap: wrap;
+  }
+}
+.catalog-list {
+  margin-top: 28px;
+  &__item {
+    width: 250px;
+    border: 1px solid $base-color;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    margin-bottom: 28px;
+    & + & {
+      margin-left: 20px;
+    }
+    &:nth-child(4n + 1) {
+      margin-left: 0;
+    }
+    &-content {
+      padding: 20px;
+      font-weight: 500;
+    }
+    &-title {
+      font-size: 16px;
+      height: 16px * 2 * 1.25;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &-price {
+      font-size: 20px;
+      line-height: 1.2;
+      text-align: right;
+      &--free {
+        color: $base-color;
+      }
+    }
+    &-img {
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      height: 220px;
+      &--bordered {
+        border-bottom: 1px solid $borderColor;
+      }
+    }
+    @media (max-width: 1389px) {
+      width: 30%;
+      &:nth-child(4n + 1), & + & {
+        margin-left: 5%;
+      }
+      &:nth-child(3n + 1) {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 1170px) {
+      width: 48%;
+      &:nth-child(3n + 1), & + & {
+        margin-left: 4%;
+      }
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 850px) {
+      width: 100%;
+      &:nth-child(3n + 1), & + & {
+        margin-left: 0%;
+      }
+    }
+  }
+}
+.catalog-sort-panel {
+  cursor: pointer;
+  &-icon {
+    transition: 0.2s transform;
+    background-image: url("@/assets/images/icons/sort-down.svg");
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-right: 12px;
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+}
+.filters-switcher {
+  margin-bottom: 30px;
+  display: none;
+  @media  (max-width: 850px) {
+    display: block;
+  }
+}

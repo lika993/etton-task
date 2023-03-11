@@ -1,0 +1,123 @@
+@import "vars";
+@import "fonts";
+@import "normalize";
+@import "flex-styles";
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: $font;
+  min-height: calc(100vh);
+  position: relative;
+  padding-bottom: 80px;
+  @media (max-width: 580px) {
+    padding-bottom: 100px;
+  }
+}
+.btn {
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  &--default {
+    background-color: $base-color;
+    border: none;
+    color: #fff;
+    &:hover {
+      background-color: $hoverBgColor;
+    }
+  }
+}
+.headline {
+  font-weight: 500;
+  color: $headlineColor;
+  margin: 0;
+  &--first {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  &--second {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+.container {
+  max-width: 1390px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+.header {
+  height: $headerHeight;
+  border-bottom: 1px solid $base-color;
+}
+.footer {
+  height: $footerHeight;
+  border-top: 1px solid $base-color;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.content {
+  min-height: calc(100vh - ($headerHeight + $footerHeight));
+  @media (max-width: 580px) {
+    min-height: calc(100vh - ($headerHeight + 100px));
+  }
+}
+.custom-field {
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 40px;
+  width: 250px;
+  padding: 0 16px;
+  border-bottom: 1px solid #362F62;
+  outline: none;
+  @media (max-width: 580px) {
+    width: 100%;
+  }
+}
+.checkbox {
+  display: none;
+  & + .checkbox-pseudo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: 1px solid #E8E9ED;
+    border-radius: 1px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  &:checked + .checkbox-pseudo {
+    background-color: $base-color;
+    border: none;
+    background-image: url("@/assets/images/icons/checked.svg");
+  }
+  &-pseudo {
+    margin-right: 14px;
+  }
+  &-wrap {
+    cursor: pointer;
+    padding: 0 0 0 4px;
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    & + & {
+      margin-top: 17px;
+    }
+  }
+}
+.product, .catalog-list {
+  padding-bottom: 139px;
+  @media (max-width: 580px) {
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,56 @@
+@import '@/assets/scss/vars';
+.header {
+  @media (max-width: 580px) {
+    &__logo {
+      margin-right: 20px;
+    }
+    .container {
+      justify-content: space-between;
+    }
+  }
+  @media (max-width: 360px) {
+
+  }
+}
+.header-nav {
+  padding-left: 70px;
+  @media (max-width: 580px) {
+    padding-left: 0;
+  }
+}
+.header-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  &__link {
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 18px;
+    line-height: 1.5;
+    &--active {
+      background-color: $base-color;
+      color: #fff;
+    }
+    &:hover {
+      background-color: $base-color;
+      color: #fff;
+    }
+  }
+  &__item {
+    & + & {
+      margin-left: 12px;
+    }
+  }
+  @media (max-width: 580px) {
+    &__link {
+      font-size: 16px;
+      padding: 8px 20px;
+    }
+  }
+  @media (max-width: 360px) {
+    &__link {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  }
+}
