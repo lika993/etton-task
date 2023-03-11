@@ -14,7 +14,8 @@ yarn-error.log*
 pnpm-debug.log*
 
 #firebase
-/.firebase
+.firebase
+.firebase/*
 .firebaserc
 /.github
 firebase.json
