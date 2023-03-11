@@ -58,7 +58,7 @@ export default new Vuex.Store({
   },
   actions: {
     getProducts: async (context, payload) => {
-      let products = await fetch('http://localhost:3000/products').then(response => response.json())
+      let products = await fetch('https://mocki.io/v1/3a4f1bc7-954b-4af5-a459-b85950dd700f').then(response => response.json())
       context.commit('setProducts', products)
     }
   }

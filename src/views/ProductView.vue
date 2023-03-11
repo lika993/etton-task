@@ -5,8 +5,8 @@
         <div class="breadcrumbs">
           <div class="breadcrumbs-link" @click="$router.back()"><span>Вернуться в каталог</span></div>
         </div>
-        <div class="product-info d-flex">
-          <div class="product-info__img" :class="{'product-info__img--bordered': !product.img}" :style="product.img | imageBackgroundUrl">
+        <div class="product-info d-flex" v-if="product">
+          <div class="product-info__img" :class="{'product-info__img--bordered': !product.img }" :style="product.img | imageBackgroundUrl">
           </div>
           <div class="product-info__details">
             <h1 class="headline headline--first product-info__details-title">
@@ -30,22 +30,19 @@
 import { imageBackgroundUrl } from '@/filters/ImageBackgroundUrl.js'
 
 export default {
-  data () {
-    return {
-      product: {}
-    }
-  },
   filters: {
     imageBackgroundUrl
   },
-  mounted () {
-    fetch('http://localhost:3000/products')
-      .then(response => response.json())
-      .then(data => {
-        this.product = data.find((product) => {
-          return this.$route.params.id == product.id
-        })
+  computed: {
+    product() {
+      let product = this.$store.getters.products.find((product) => {
+        return this.$route.params.id == product.id
       })
+      return product
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getProducts')
   }
 }
 </script>
