@@ -8,6 +8,7 @@
   }
   &-info {
     &__img {
+      flex-shrink: 0;
       margin-right: 60px;
       flex-grow: 1;
       max-width: 500px;
