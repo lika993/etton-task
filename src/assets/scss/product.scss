@@ -30,9 +30,9 @@
     }
     @media (max-width: 1090px) {
       &__img {
-        width: 400px;
         max-width: 400px;
         height: 400px;
+        width: 100%;
       }
     }
     @media (max-width: 890px) {
@@ -46,7 +46,6 @@
       }
       &__img {
         margin-right: 0;
-        width: 500px;
         max-width: 500px;
         height: 500px;
         margin-bottom: 24px;
