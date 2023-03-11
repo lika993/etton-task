@@ -30,7 +30,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/filter';
+@import '@/assets/scss/filter'
 </style>
 
 <script>
@@ -53,7 +53,7 @@ export default {
         return this.$store.getters.filter
       },
       set: function (val) {
-        this.$store.commit('updateFilter', val);
+        this.$store.commit('updateFilter', val)
       }
     },
     filterVisible() {
@@ -76,7 +76,7 @@ export default {
   methods: {
     selected ($event) {
       this.filter.category = $event
-      this.$store.commit('updateFilter', this.filter);
+      this.$store.commit('updateFilter', this.filter)
     },
     free (price) {
       return price === 0
@@ -93,7 +93,7 @@ export default {
         category: null,
         search: ''
       })
-      this.$store.commit('switchFilter', false);
+      this.$store.commit('switchFilter', false)
     },
     filterByPrice (products) {
       if (this.filter.price.length === 2 || this.filter.price.length === 0) {
@@ -114,7 +114,7 @@ export default {
       products = this.filterByPrice(products)
       products = this.filterByCategory(products, this.filter.category)
       this.$store.commit('setFilteredProducts', products)
-      this.$store.commit('switchFilter', true);
+      this.$store.commit('switchFilter', true)
     }
   }
 }
