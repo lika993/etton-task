@@ -23,6 +23,9 @@
     }
     &__details {
       flex-grow: 1;
+      @media (max-width: 890px) {
+        width: 100%;
+      }
     }
     @media (max-width: 1090px) {
       &__img {
@@ -33,9 +36,6 @@
     }
     @media (max-width: 890px) {
       flex-wrap: wrap;
-      &__details {
-        width: 100%;
-      }
       &__details-title, &__price {
         font-size: 20px;
         line-height: 24px;
