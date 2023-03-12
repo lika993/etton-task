@@ -40,5 +40,8 @@
   }
   &-list {
     margin-top: 30px;
+    @media (max-width: 580px) {
+      margin-bottom: 30px;
+    }
   }
 }

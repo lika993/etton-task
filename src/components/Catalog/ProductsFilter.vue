@@ -37,6 +37,9 @@
 import CustomSelect from '@/components/CustomSelect.vue'
 export default {
   props: {
+    opened: {
+      type: Boolean
+    }
   },
   components: {
     CustomSelect
@@ -94,6 +97,7 @@ export default {
         search: ''
       })
       this.$store.commit('switchFilter', false)
+      this.toggleFilterByMobileCase(false)
     },
     filterByPrice (products) {
       if (this.filter.price.length === 2 || this.filter.price.length === 0) {
@@ -108,6 +112,11 @@ export default {
         return !this.filter.category ? product : product.categories.includes(category)
       })
     },
+    toggleFilterByMobileCase(val) {
+      if (document.documentElement.clientWidth <= 580) {
+        this.$emit('toggleFilter', val)
+      }
+    },
     applyFilter () {
       let products = [...this.products]
       products = this.searchByFilterApply(products, this.filter.search)
@@ -115,6 +124,7 @@ export default {
       products = this.filterByCategory(products, this.filter.category)
       this.$store.commit('setFilteredProducts', products)
       this.$store.commit('switchFilter', true)
+      this.toggleFilterByMobileCase(false)
     }
   }
 }

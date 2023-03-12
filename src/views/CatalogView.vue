@@ -6,7 +6,7 @@
         Фильтры
       </button>
       <div class="catalog-columns d-flex">
-        <products-filter :class="{'opened': filterOpened}"></products-filter>
+        <products-filter :opened="filterOpened" @toggleFilter="filterOpened = $event" :class="{'opened': filterOpened}"></products-filter>
         <main class="content catalog__content">
           <div class="catalog-sort-panel d-flex ai-ctr jc-end">
             <span class="d-flex ai-ctr" @click="sort"><i class="catalog-sort-panel-icon" :class="{'catalog-sort-panel-icon--up': !sortData.desc}"></i><span>По цене</span></span>
